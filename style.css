@@ -1,0 +1,293 @@
+* {margin:0;padding:0;border:0;background:transparent;outline:none;text-decoration:none;outline:none;font-family:inherit;box-sizing:border-box;}
+ol, ul, li {list-style:none;display:block;}
+table {border-collapse: collapse;border-spacing:0;}
+a img {border: none;}
+
+button,
+a{cursor: pointer; color: inherit;}
+
+textarea{resize: none;}
+
+button,
+input,
+textarea,
+select{appearance: none !important; -webkit-appearance: none !important; border-radius: 0;}
+
+/* end of css reset */
+
+/* A bird-animation eredetijet innen szedtuk: "https://codepen.io/__akash__19/pen/QWKpyMm", amit kicsit szerkesztettunk. */
+
+:root {
+    --body: /*#ff533e; */ #000000;
+    --mouth: #000000;
+    --feather: #939393;
+    --beak-top: /*#e9581a; */ rgb(207, 207, 7);
+    --beak-down: /*#aa4c21; */ rgb(212, 212, 21);
+    --leg: /*#00adef; */ rgb(177, 118, 9);
+    --body-color: #e3edf7;
+}
+
+body {
+    background: #000000;
+    height: 100vh;
+    width: auto;
+}
+section {
+    height: auto;
+}
+.container {
+    width: 400px;
+    height: 400px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-34%, 0);
+}
+
+ .body,  .mouth,  .feather,  .tail, .beak, .mouth::before, .mouth::after, .leg, .leg::after, .leg::before {
+    position: absolute;
+}
+ .body,  .mouth, .feather, .beak, .mouth::before, .mouth::after  {
+    border-radius: 50%;
+}
+
+.body {
+    top: 26px;
+    left: 50px;
+    height: 180px;
+    width: 200px;
+    transform: rotate(-17deg);
+    background: linear-gradient(to bottom, transparent 0%, transparent 20%, var(--body) 20%);
+    z-index: 2;
+}
+
+.mouth {    
+    background:  var(--mouth);
+    top: 20px;
+    left: -175px;
+    width: 100px;
+    height: 100px;
+    transform: rotate(-17deg);
+    z-index: 5;
+    animation: animate-mouth 1.5s forwards;
+    animation-delay: 2s;
+}
+
+@keyframes animate-mouth {
+    100% {
+        left: 175px;
+    }
+}
+.mouth::before {
+    content: "";
+    width: 30px;
+    height: 30px;
+    background: white;
+    position: absolute;
+    top: 20px;
+    left: 40px;
+}
+.mouth::after {
+    content: "";
+    width: 10px;
+    height: 10px;
+    background: black;
+    position: absolute;
+    top: 30px;
+    left: 55px;
+    animation: animate-eye 1s infinite;
+    animation-delay: 4s;
+}
+
+@keyframes animate-eye {
+    50% {
+        height: 5px;
+    }
+}
+
+
+.feather {
+    z-index: 4;
+    left: 44px;
+    top: -206px;
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(to bottom, transparent 0%, transparent 50%, var(--feather) 50%);
+    transform: rotate(-17deg);
+    animation: animate-feather 1.5s forwards;
+    animation-delay: 2s;
+}
+
+@keyframes animate-feather {
+    100% {
+        top: -6px;
+    }
+}
+
+.tail {
+    width: 150px;
+    height: 60px;
+    background-color: var(--mouth);
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%);
+    top: 92px;
+    left: 324px;
+    transform: rotate(-17deg);
+    z-index: 3;
+    animation: animate-tail 1.5s forwards;
+    animation-delay: 2s;
+}
+@keyframes animate-tail {
+    100% {
+        left: -24px;
+    }
+}
+.beak {
+    height: 100px;
+    width: 100px;
+    background: linear-gradient(to bottom, var(--beak-top) 0%, var(--beak-top) 15%, transparent 15% );
+    left: 224px;
+    top: 240px;
+    z-index: -1;
+    transform: rotate(-17deg);
+    animation: animate-beak 1.5s forwards;
+    animation-delay: 2s;
+}
+@keyframes animate-beak {
+    100% {
+        top: 40px;
+    }
+}
+.leg {
+    background: var(--leg);
+    height: 50px;
+    width: 10px;
+    border-radius: 10px;
+    top: 515px;
+    left: 125px;
+    transform: rotate(-15deg);
+    z-index: 1;
+    animation: animate-leg 1.5s forwards;
+    animation-delay: 2s;
+}
+@keyframes animate-leg {
+    100% {
+        top: 215px;
+    }
+}
+.leg::before {
+    bottom: -8px;
+    content: "";
+    width: 40px;
+    height: 9px;
+    background: var(--leg);
+    border-radius: 10px;
+    transform: rotate(15deg);
+    z-index: -1;
+}
+.leg::after {
+    top: -8px;
+    content: "";
+    width: 30px;
+    height: 9px;
+    background: var(--leg);
+    border-radius: 10px;
+    transform: rotate(-15deg);
+    z-index: -1;
+}
+
+/* End of bird animation */
+
+body {
+    background-image: linear-gradient(180deg, rgba(237,234,229,1) 0%, rgba(175,232,216,1) 50%, rgba(33,65,133,1) 100%);
+    font-family: 'Arima Madurai', cursive;
+    line-height: 2.8rem;
+    font-size: 0.8rem;
+}
+
+#logo {
+    width: 10vw;
+    margin-top: 2vw;
+    margin-left: 2vw;
+}
+
+#title {
+    position: absolute;
+    top: 2.5vw;
+    left: 15vw;
+    font-size: 2.5vw;
+    font-weight: bolder;
+}
+
+#button-div {
+    position: relative;
+}
+
+#button-action {
+    position: absolute;
+    top: -20vh;
+    left: 50vw;
+    transform: translate(-50%, 0);
+    background-color: #9fedd7;
+    width: 180px;
+    height: 80px;
+    border-radius: 10vw;
+    box-shadow: -4px -4px 4px 4px rgb(26, 61, 61);
+    transition: 1s;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: rgba(33,65,133,1);
+}
+
+#button-action:hover {
+    transform: translate(-50%, -50%);
+    width: 200px;
+    height: 100px;
+    font-size: 1.4rem;
+    box-shadow: 4px 4px 4px 4px rgb(26, 61, 61);
+    font-weight: 800;
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        max-width: 80vw;
+        max-height: 100vh;
+    }
+
+    .container {
+        max-width: 110%;
+        max-height: 110%;
+    }
+
+    #title {
+        font-size: 17px;
+        line-height: 1.3rem;
+        margin-top: 6px;
+        margin-left: 13px;
+        z-index: 2;
+    }
+
+    #logo {
+        width: 8vh;
+        margin-top: 5px;
+        margin-left: 5px;
+        z-index: 2;
+    }
+
+    section {
+        max-width: 94vw;
+        max-height: 100vh;
+        transform: translate(0, 20%);
+    }
+
+    #button-div {
+        margin-top: 2vh;
+        transform: translate(0, 1000%);
+    }
+}
+
+    .feather:hover {
+        background: linear-gradient(to bottom, transparent 0%, transparent 0%, var(--body) 30%);
+    }
+
+    /* push */
+    /* push2*/
