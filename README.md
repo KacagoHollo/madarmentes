@@ -2,7 +2,7 @@
 
 My first team project, made by bsamu, enikobuza, KacagoHollo, tgabriella. 
 
-The visitor starts on the landing page, where is located a button and a bird animation. On the home page there is a nav bar, and the different sections. Navbar workes partly, the project main element is the made design by CSS and CSS flexbox.
+The visitor starts on the landing page, where is located a button and a bird animation. On the home page there is a nav bar, and the different sections. Navbar workes partly, the project main element is the made design by CSS and CSS flexbox. The website is responsive for the display size if mobile phones.
 
 We borrowed the bird-animation from here: "https://codepen.io/__akash__19/pen/QWKpyMm", and it has been edited by us.
 
